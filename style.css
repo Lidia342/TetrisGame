@@ -17,6 +17,33 @@ h3{
   top: 90px;
   right: -210px;
 }
+.btn-group button {
+  background-color: #04AA6D; /* Green background */
+  border: 1px solid green; /* Green border */
+  color: white; /* White text */
+  padding: 7px 15px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+  position: relative;
+  top: -40px;
+  right: -100px;
+}
+
+.btn-group button:not(:last-child) {
+  border-right: none; /* Prevent double borders */
+}
+
+/* Clear floats (clearfix hack) */
+.btn-group:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Add a background color on hover*/ 
+.btn-group button:hover {
+  background-color: #3e8e41;
+}
 
 #start-button{
   background-color: #04AA6D; /* Green background */
@@ -44,7 +71,7 @@ h3{
     height: 400px;
     display: flex;
     flex-wrap: wrap;
-    background-color: yellow;
+    background-color: rgb(250, 234, 6);
     position: relative;
     top: -80px;
     right: 100px;
@@ -58,6 +85,21 @@ h3{
   .tetromino {
     background-color: blue;
   }
+  .mini-grid {
+    margin-left: 50px;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: yellow;
+    position: relative;
+    top: -50px;
+    right: 140px;
+  }
   
+  .mini-grid div {
+    height: 20px;
+    width: 20px;
+  }
 
  

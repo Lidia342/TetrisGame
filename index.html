@@ -2,14 +2,24 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <script src="app.js" charset="utf-8"></script>
+    
     <link rel="stylesheet" href="style.css"></link>
-    <title>Basic Tetris</title>
+    <title>Tetris Game</title>
   </head>
   <body>
-
+    <div>
+      <form > 
+        <p>Choose speed</p>
+        <div class="btn-group"> 
+          <button id="easy" type="button"  class="btn">Easy</button>
+          <button id="fast" type="button"  class="btn">Fast</button>
+          <button id="fastest" type="button" class="btn">Fastest</button>
+        </div>
+      </form>
+    </div>
+    
     <h3>Score:<span id="score">0</span></h3>
-    <button id="start-button">Start/Pause</button>
+    <button id="start-button" value="start">Start/Pause</button>
 
     <div class="container">
       <div class="grid">
@@ -224,10 +234,27 @@
         <div class="taken"></div>
       </div>
 
-
+      <div class="mini-grid">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
     </div>
-
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="app.js" charset="utf-8"></script>
 
   </body>
 </html>
