@@ -8,13 +8,9 @@ document.addEventListener('DOMContentLoaded', ()=>{
     let score = 0
     var timerId;
     var number; 
-    const colors = [
-        'orange',
-        'red',
-        'purple',
-        'green',
-        'blue'
-      ]
+    const colors = ['orange', 'red', 'purple', 'green', 'yellow']
+
+    $("#start-button").prop( "disabled", true);
 
       //move down funciton 
   function moveDown(){
@@ -27,11 +23,13 @@ document.addEventListener('DOMContentLoaded', ()=>{
       $('#easy').click(function () { 
         draw();
        timerId = setInterval(moveDown, 2000);
-        nextRandom = Math.floor(Math.random()*theTetrominoes.length)
+        nextRandom = Math.floor(Math.random()*allterto.length)
         displayShape();
           number = 2000; 
           $("#fast").hide();
           $("#fastest").hide();
+          $("#start-button").prop( "disabled", false);
+
 
                 document.getElementById("fast").disabled = true;
           document.getElementById("fastest").disabled = true;
@@ -41,12 +39,14 @@ document.addEventListener('DOMContentLoaded', ()=>{
       $('#fast').click(function (e) { 
         draw();
     timerId = setInterval(moveDown, 1000);
-        nextRandom = Math.floor(Math.random()*theTetrominoes.length)
+        nextRandom = Math.floor(Math.random()*allterto.length)
         displayShape();
         number = 1000; 
     
         $("#easy").hide();
         $("#fastest").hide();
+        $("#start-button").prop( "disabled", false);
+
           document.getElementById("easy").disabled = true;
         document.getElementById("fastest").disabled = true;
     
@@ -54,11 +54,12 @@ document.addEventListener('DOMContentLoaded', ()=>{
       $('#fastest').click(function (e) { 
         draw();
      timerId =  setInterval(moveDown,500);      
-        nextRandom = Math.floor(Math.random()*theTetrominoes.length)
+        nextRandom = Math.floor(Math.random()*allterto.length)
         displayShape();
         number = 500; 
         $("#fast").hide();
         $("#easy").hide();
+        $("#start-button").prop( "disabled", false);
         document.getElementById("fast").disabled = true;
         document.getElementById("easy").disabled = true;
     
@@ -67,53 +68,73 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
       
   //Tetrominoes
-  const lTetromino = [
-    [1, wid+1, wid*2+1, 2],
-    [wid, wid+1, wid+2, wid*2+2],
-    [1, wid+1, wid*2+1, wid*2],
-    [wid, wid*2, wid*2+1, wid*2+2]
-  ]
+  const lTetromino = terto1()
 
-  const zTetromino = [
-    [0,wid,wid+1,wid*2+1],
-    [wid+1, wid+2,wid*2,wid*2+1],
-    [0,wid,wid+1,wid*2+1],
-    [wid+1, wid+2,wid*2,wid*2+1]
-  ]
+  const zTetromino = tertoZ()
 
-  const tTetromino = [
-    [1,wid,wid+1,wid+2],
-    [1,wid+1,wid+2,wid*2+1],
-    [wid,wid+1,wid+2,wid*2+1],
-    [1,wid,wid+1,wid*2+1]
-  ]
+  const tTetromino = tertot()
 
-  const oTetromino = [
-    [0,1,wid,wid+1],
-    [0,1,wid,wid+1],
-    [0,1,wid,wid+1],
-    [0,1,wid,wid+1]
-  ]
+  const oTetromino = tertoo()
 
-  const iTetromino = [
-    [1,wid+1,wid*2+1,wid*3+1],
-    [wid,wid+1,wid+2,wid+3],
-    [1,wid+1,wid*2+1,wid*3+1],
-    [wid,wid+1,wid+2,wid+3]
-  ]
+  const iTetromino = tertoi()
 
-  const theTetrominoes = [lTetromino, zTetromino, tTetromino, oTetromino, iTetromino]
+  const allterto = [lTetromino, zTetromino, tTetromino, oTetromino, iTetromino]
 
   let currentPosition = 4
   let currentRotation = 0
 
   //randomly select a tetromino and its first rotation
-  let random = Math.floor(Math.random()*theTetrominoes.length)
-  let current = theTetrominoes[random][currentRotation]
+  let random = Math.floor(Math.random()*allterto.length)
+  let current = allterto[random][currentRotation]
 
 
 
   
+  function tertoi() {
+    return [
+      [1, wid + 1, wid * 2 + 1, wid * 3 + 1],
+      [wid, wid + 1, wid + 2, wid + 3],
+      [1, wid + 1, wid * 2 + 1, wid * 3 + 1],
+      [wid, wid + 1, wid + 2, wid + 3]
+    ]
+  }
+
+  function tertoo() {
+    return [
+      [0, 1, wid, wid + 1],
+      [0, 1, wid, wid + 1],
+      [0, 1, wid, wid + 1],
+      [0, 1, wid, wid + 1]
+    ]
+  }
+
+  function tertot() {
+    return [
+      [1, wid, wid + 1, wid + 2],
+      [1, wid + 1, wid + 2, wid * 2 + 1],
+      [wid, wid + 1, wid + 2, wid * 2 + 1],
+      [1, wid, wid + 1, wid * 2 + 1]
+    ]
+  }
+
+  function tertoZ() {
+    return [
+      [0, wid, wid + 1, wid * 2 + 1],
+      [wid + 1, wid + 2, wid * 2, wid * 2 + 1],
+      [0, wid, wid + 1, wid * 2 + 1],
+      [wid + 1, wid + 2, wid * 2, wid * 2 + 1]
+    ]
+  }
+
+  function terto1() {
+    return [
+      [1, wid + 1, wid * 2 + 1, 2],
+      [wid, wid + 1, wid + 2, wid * 2 + 2],
+      [1, wid + 1, wid * 2 + 1, wid * 2],
+      [wid, wid * 2, wid * 2 + 1, wid * 2 + 2]
+    ]
+  }
+
   function draw() {
     current.forEach(index => {
       squares[currentPosition + index].classList.add('tetromino')
@@ -155,11 +176,11 @@ document.addEventListener('DOMContentLoaded', ()=>{
         current.forEach(index => squares[currentPosition + index].classList.add('taken'))
         //start a new tetromino falling
         random = nextRandom
-        nextRandom =  Math.floor(Math.random() * theTetrominoes.length)
-        current = theTetrominoes[random][currentRotation]
+        nextRandom =  Math.floor(Math.random() * allterto.length)
+        current = allterto[random][currentRotation]
         currentPosition = 4
         draw()
-        //displayShape()
+        displayShape()
         addScore()
         gameOver()
         }
@@ -196,7 +217,7 @@ function rotate() {
   if(currentRotation === current.length) { //if the current rotation gets to 4, make it go back to 0
     currentRotation = 0
   }
-  current = theTetrominoes[random][currentRotation]
+  current = allterto[random][currentRotation]
   //checkRotatedPosition()
   draw()
 }
@@ -234,13 +255,15 @@ startBtn.addEventListener('click', () => {
   if(currentvalue == "start"){
   clearInterval(timerId); 
   timerId = null;   
+  
+
   document.getElementById("start-button").value="pause";
   }
   else{
     document.getElementById("start-button").value="start";
     draw();
     timerId = setInterval(moveDown, number)
-     nextRandom = Math.floor(Math.random()*theTetrominoes.length)
+     nextRandom = Math.floor(Math.random()*allterto.length)
      displayShape();
   }
 })

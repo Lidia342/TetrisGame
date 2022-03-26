@@ -3,22 +3,21 @@ body {
   padding: 0;
   background: #ababae;
 }
-label{
+label {
   color: green;
 }
 
-p{
+p {
   color: green;
-
 }
-h3{
-  color:green;
+h3 {
+  color: green;
   position: relative;
   top: 90px;
   right: -210px;
 }
 .btn-group button {
-  background-color: #04AA6D; /* Green background */
+  background-color: #04aa6d; /* Green background */
   border: 1px solid green; /* Green border */
   color: white; /* White text */
   padding: 7px 15px; /* Some padding */
@@ -35,18 +34,18 @@ h3{
 
 /* Clear floats (clearfix hack) */
 .btn-group:after {
-  content: "";
+  content: '';
   clear: both;
   display: table;
 }
 
-/* Add a background color on hover*/ 
+/* Add a background color on hover*/
 .btn-group button:hover {
   background-color: #3e8e41;
 }
 
-#start-button{
-  background-color: #04AA6D; /* Green background */
+#start-button {
+  background-color: #04aa6d; /* Green background */
   border: 1px solid green; /* Green border */
   color: white; /* White text */
   padding: 4px 14px; /* Some padding */
@@ -57,49 +56,46 @@ h3{
   right: -210px;
 }
 
-#start-button{
+#start-button {
   background-color: #3e8e41;
 }
 
 .container {
-    display: flex;
-  }
-  
-  
-  .grid {
-    width: 200px;
-    height: 400px;
-    display: flex;
-    flex-wrap: wrap;
-    background-color: rgb(250, 234, 6);
-    position: relative;
-    top: -80px;
-    right: 100px;
-  }
-  
-  .grid div {
-    height: 20px;
-    width: 20px;
-  }
+  display: flex;
+}
 
-  .tetromino {
-    background-color: blue;
-  }
-  .mini-grid {
-    margin-left: 50px;
-    width: 80px;
-    height: 80px;
-    display: flex;
-    flex-wrap: wrap;
-    background-color: yellow;
-    position: relative;
-    top: -50px;
-    right: 140px;
-  }
-  
-  .mini-grid div {
-    height: 20px;
-    width: 20px;
-  }
+.grid {
+  width: 200px;
+  height: 400px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgb(6, 104, 250);
+  position: relative;
+  top: -80px;
+  right: 100px;
+}
 
- 
+.grid div {
+  height: 20px;
+  width: 20px;
+}
+
+.tetromino {
+  background-color: blue;
+}
+.mini-grid {
+  margin-left: 50px;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: rgb(6, 104, 250);
+  position: relative;
+  top: -50px;
+  right: 140px;
+}
+
+.mini-grid div {
+  height: 20px;
+  width: 20px;
+}
