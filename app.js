@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', ()=>{
     let squares = Array.from(document.querySelectorAll('.grid div')) 
     const scoreDisplay = document.querySelector('#score')
     const startBtn = document.querySelector('#start-button')
-    const wid = 10
+    const wid = 10  
     let nextRandom = 0
     let score = 0
     var timerId;

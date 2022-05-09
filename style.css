@@ -3,18 +3,24 @@ body {
   padding: 0;
   background: #ababae;
 }
+
 label {
   color: green;
+  
 }
 
 p {
   color: green;
+  font-size: larger;
+  position: relative;
+  top: 8px;
+  right: -60px;
 }
 h3 {
   color: green;
   position: relative;
-  top: 90px;
-  right: -210px;
+  top: 100px;
+  right: -250px;
 }
 .btn-group button {
   background-color: #04aa6d; /* Green background */
@@ -25,7 +31,7 @@ h3 {
   float: left; /* Float the buttons side by side */
   position: relative;
   top: -40px;
-  right: -100px;
+  right: -200px;
 }
 
 .btn-group button:not(:last-child) {
@@ -53,11 +59,12 @@ h3 {
   float: left; /* Float the buttons side by side */
   position: relative;
   top: 90px;
-  right: -210px;
+  right: -250px;
 }
 
 #start-button {
   background-color: #3e8e41;
+  
 }
 
 .container {
@@ -72,7 +79,7 @@ h3 {
   background-color: rgb(6, 104, 250);
   position: relative;
   top: -80px;
-  right: 100px;
+  right: 80px;
 }
 
 .grid div {
@@ -92,10 +99,70 @@ h3 {
   background-color: rgb(6, 104, 250);
   position: relative;
   top: -50px;
-  right: 140px;
+  right: 100px;
 }
 
 .mini-grid div {
   height: 20px;
   width: 20px;
 }
+
+@media only screen and (max-width: 320px  ) {
+  p {
+    color: green;
+    font-size: medium;
+    position: relative;
+    top: 0px;
+    right: -20px;
+    min-width: fit-content;
+    min-height: fit-content;
+  }
+
+  h3 {
+    color: green;
+    position: absolute;
+    top: 30px;
+    right: 170px;
+    font-size: 15px;
+    min-width: fit-content;
+    min-height: fit-content;
+  }
+  
+  .btn-group button {
+    position: relative;
+    right: -120px;
+    min-width: fit-content;
+    min-height: fit-content;
+  }
+  #start-button {
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    font-size: 10px;
+    min-width: fit-content;
+    min-height: fit-content;
+  }
+  .grid {
+    width: 200px;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    top: 5px;
+    right: -30px;
+  }
+  .grid div {
+    height: 20px;
+    width: 20px;
+  }
+  .mini-grid{
+    display: none;
+  }
+  .mini-grid div {
+    display: none;
+  }
+}
+
+
+
+
